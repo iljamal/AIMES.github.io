@@ -398,22 +398,18 @@ ul {
   box-shadow: 0 16px 36px rgba(30, 27, 24, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  height: 100%;
 }
 
-.photo-placeholder {
+.profile-photo {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  display: block;
+  height: auto;
   border-radius: 14px;
-  border: 1px dashed var(--line);
+  border: 1px solid rgba(30, 27, 24, 0.08);
   background: #f7f2e8;
-  color: var(--ink-soft);
-  display: grid;
-  place-items: center;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .profile-head h3 {
@@ -426,10 +422,48 @@ ul {
   color: var(--ink-soft);
 }
 
+.profile-summary {
+  list-style: none;
+  cursor: pointer;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.profile-bio-more {
+  color: var(--ink-soft);
+}
+
+.profile-summary::-webkit-details-marker {
+  display: none;
+}
+
+.profile-summary::marker {
+  content: "";
+}
+
+.profile-inline-toggle {
+  color: var(--accent-dark);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.profile-bio-more p {
+  margin-top: 10px;
+  color: var(--ink-soft);
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
 .profile-meta {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--accent-dark);
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.profile-meta a:hover {
+  text-decoration: underline;
 }
 
 .publication-list {
@@ -626,6 +660,10 @@ ul {
   .cta {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .profile-card {
+    padding: 20px;
   }
 }
 
